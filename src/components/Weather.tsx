@@ -244,7 +244,7 @@ export default function Weather() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search city..."
-            className="input-glow w-full rounded-lg border border-white/5 bg-white/[0.03] px-4 py-2 text-sm outline-none placeholder:text-muted/40 transition-all"
+            className="input-glow w-full rounded-lg border border-card-border bg-card px-4 py-2 text-sm outline-none placeholder:text-muted/40 transition-all"
           />
           {searching && (
             <p className="text-muted mt-2 text-xs">Searching...</p>
@@ -255,7 +255,7 @@ export default function Weather() {
                 <li key={i}>
                   <button
                     onClick={() => selectCity(city)}
-                    className="w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-white/[0.05] transition-colors"
+                    className="w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-card-hover transition-colors"
                   >
                     {city.name}, {city.country}
                   </button>
@@ -308,7 +308,7 @@ export default function Weather() {
             {weather.daily.date.slice(0, 5).map((date, i) => (
               <div
                 key={date}
-                className="rounded-xl bg-white/[0.03] p-3 text-center transition-colors hover:bg-white/[0.06]"
+                className="rounded-xl bg-card p-3 text-center transition-colors hover:bg-card-hover"
               >
                 <p className="text-muted mb-1 text-[10px] font-semibold uppercase tracking-wider">
                   {dayName(date, i)}
