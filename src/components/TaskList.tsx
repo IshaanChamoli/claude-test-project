@@ -66,7 +66,7 @@ export default function TaskList() {
             <span className="text-muted text-xs tabular-nums">
               {done}/{total}
             </span>
-            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-white/5">
+            <div className="h-1.5 w-20 overflow-hidden rounded-full bg-card-border">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-accent to-accent-3 transition-all duration-500 ease-out"
                 style={{ width: `${progress}%` }}
@@ -84,7 +84,7 @@ export default function TaskList() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="What needs to be done?"
-          className="input-glow flex-1 rounded-xl border border-white/5 bg-white/[0.03] px-4 py-2.5 text-sm text-foreground placeholder:text-muted/50 focus:border-accent/30 focus:outline-none transition-all duration-300"
+          className="input-glow flex-1 rounded-xl border border-card-border bg-card px-4 py-2.5 text-sm text-foreground placeholder:text-muted/50 focus:border-accent/30 focus:outline-none transition-all duration-300"
         />
         <button
           type="submit"
@@ -107,7 +107,7 @@ export default function TaskList() {
           {tasks.map((task, i) => (
             <li
               key={task.id}
-              className="animate-slide-in group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-white/[0.03]"
+              className="animate-slide-in group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-card"
               style={{ animationDelay: `${i * 30}ms` }}
             >
               <button
@@ -115,7 +115,7 @@ export default function TaskList() {
                 className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-lg border transition-all duration-300 ${
                   task.done
                     ? "border-accent/50 bg-gradient-to-br from-accent to-accent-2 shadow-[0_0_10px_rgba(129,140,248,0.3)]"
-                    : "border-white/10 hover:border-accent/40 hover:shadow-[0_0_8px_rgba(129,140,248,0.15)]"
+                    : "border-card-border hover:border-accent/40 hover:shadow-[0_0_8px_rgba(129,140,248,0.15)]"
                 }`}
               >
                 {task.done && (
